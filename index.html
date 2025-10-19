@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ENTHUSIA 2K25</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    header {
+      background: linear-gradient(135deg, #004aad, #00c6ff);
+      color: white;
+      text-align: center;
+      padding: 1.5rem 0;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      font-weight: 700;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #222;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      padding: 1rem 2rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    nav button:hover, nav button.active {
+      background: #00c6ff;
+      color: #000;
+    }
+
+    .section {
+      display: none;
+      height: calc(100vh - 140px);
+      padding: 2rem;
+      background: white;
+      box-sizing: border-box;
+      overflow-y: auto;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    h2 {
+      text-align: center;
+      color: #004aad;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 2rem auto;
+    }
+
+    li {
+      padding: 1rem;
+      margin: 0.8rem 0;
+      background: #f0f7ff;
+      border-left: 5px solid #004aad;
+      border-radius: 5px;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #222;
+      color: #fff;
+      font-size: 0.9rem;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>ENTHUSIA 2K25</header>
+
+  <nav>
+    <button class="tab active" onclick="showSection('past')">Past Events</button>
+    <button class="tab" onclick="showSection('live')">Live Events</button>
+    <button class="tab" onclick="showSection('upcoming')">Upcoming Events</button>
+  </nav>
+
+  <div id="past" class="section active">
+    <h2>Past Events</h2>
+    <ul>
+      <li>abc</li>
+      <li>Tech Marathon</li>
+      <li>Artistry Expo</li>
+      <li>Sports Fiesta</li>
+    </ul>
+  </div>
+
+  <div id="live" class="section">
+    <h2>Live Events</h2>
+    <ul>
+      <li>Dance Showdown</li>
+      <li>Hackathon Finals</li>
+      <li>Gaming Arena</li>
+    </ul>
+  </div>
+
+  <div id="upcoming" class="section">
+    <h2>Upcoming Events</h2>
+    <ul>
+      <li>DJ Night</li>
+      <li>Closing Ceremony</li>
+      <li>Prize Distribution</li>
+    </ul>
+  </div>
+
+  <footer>© 2025 ENTHUSIA Fest | Designed with Passion</footer>
+
+  <script>
+    function showSection(sectionId) {
+      // Hide all sections
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      // Deactivate all buttons
+      document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+      // Activate selected section & button
+      document.getElementById(sectionId).classList.add('active');
+      event.currentTarget.classList.add('active');
+    }
+  </script>
+</body>
+</html>
