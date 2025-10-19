@@ -4,30 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ENTHUSIA 2K25</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    /* Global Styles */
     body {
       margin: 0;
-      font-family: "Poppins", sans-serif;
-      background: #f4f4f4;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #e0f7ff, #f4f4f4);
       color: #333;
       height: 100vh;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
+    /* Header */
     header {
       background: linear-gradient(135deg, #004aad, #00c6ff);
       color: white;
       text-align: center;
-      padding: 1.5rem 0;
-      font-size: 2.5rem;
+      padding: 2rem 0;
+      font-size: 3rem;
       letter-spacing: 2px;
       font-weight: 700;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
+    /* Navigation */
     nav {
       display: flex;
       justify-content: center;
       background: #222;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     }
 
     nav button {
@@ -37,22 +46,44 @@
       font-size: 1.2rem;
       padding: 1rem 2rem;
       cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      font-weight: 600;
+    }
+
+    nav button::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0%;
+      height: 3px;
+      background: #00c6ff;
       transition: 0.3s;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    nav button:hover::after, nav button.active::after {
+      width: 80%;
     }
 
     nav button:hover, nav button.active {
-      background: #00c6ff;
-      color: #000;
+      color: #00c6ff;
     }
 
+    /* Sections */
     .section {
       display: none;
-      height: calc(100vh - 140px);
+      flex: 1;
       padding: 2rem;
-      background: white;
+      background: #fff;
       box-sizing: border-box;
       overflow-y: auto;
-      animation: fadeIn 0.4s ease-in-out;
+      animation: fadeIn 0.5s ease-in-out;
+      border-radius: 15px;
+      margin: 1rem 2rem;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
     }
 
     .section.active {
@@ -62,39 +93,66 @@
     h2 {
       text-align: center;
       color: #004aad;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
     }
 
     ul {
       list-style: none;
       padding: 0;
-      max-width: 600px;
-      margin: 2rem auto;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
     li {
-      padding: 1rem;
-      margin: 0.8rem 0;
-      background: #f0f7ff;
-      border-left: 5px solid #004aad;
-      border-radius: 5px;
-      font-size: 1.1rem;
+      padding: 1rem 1.2rem;
+      margin: 1rem 0;
+      background: linear-gradient(135deg, #e0f7ff, #ccefff);
+      border-left: 6px solid #004aad;
+      border-radius: 12px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
+    li:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    /* Footer */
     footer {
       text-align: center;
       padding: 1rem;
       background: #222;
       color: #fff;
-      font-size: 0.9rem;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
+      font-size: 0.95rem;
+      font-weight: 500;
+      box-shadow: 0 -2px 6px rgba(0,0,0,0.3);
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(15px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    /* Scrollbar Styling */
+    .section::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .section::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    .section::-webkit-scrollbar-thumb {
+      background: #004aad;
+      border-radius: 10px;
+    }
+
   </style>
 </head>
 <body>
@@ -109,29 +167,28 @@
   <div id="past" class="section active">
     <h2>Past Events</h2>
     <ul>
-      <li>Cricket match 20 vs 22(20 won by 7 wickets) </li>
-      <li>Volleyball match 23 vs 25(23 wins 2-0)</li>
-      <li>Solo Singing Competition (Results TBD) </li>
-      <li>! </li>
-<li>Kabaddi 24W vs 20W</li>
+      <li>Battle of Bands</li>
+      <li>Tech Marathon</li>
+      <li>Artistry Expo</li>
+      <li>Sports Fiesta</li>
     </ul>
   </div>
 
   <div id="live" class="section">
     <h2>Live Events</h2>
     <ul>
-      <li>Cricket Match 21 vs PG</li>
-      <li>Duet Singing Finals</li>
-      <li>Indoor Games</li>
+      <li>Dance Showdown</li>
+      <li>Hackathon Finals</li>
+      <li>Gaming Arena</li>
     </ul>
   </div>
 
   <div id="upcoming" class="section">
     <h2>Upcoming Events</h2>
     <ul>
-      <li>Football Match 20 vs 24</li>
-      <li>Throwball 21W vs 20W</li>
-      <li>Open Mic</li>
+      <li>DJ Night</li>
+      <li>Closing Ceremony</li>
+      <li>Prize Distribution</li>
     </ul>
   </div>
 
@@ -139,15 +196,11 @@
 
   <script>
     function showSection(sectionId) {
-      // Hide all sections
       document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-      // Deactivate all buttons
       document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
-      // Activate selected section & button
       document.getElementById(sectionId).classList.add('active');
       event.currentTarget.classList.add('active');
     }
   </script>
 </body>
 </html>
-
